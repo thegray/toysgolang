@@ -44,6 +44,6 @@ func paulHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	saved.Name = "initial"
 	http.HandleFunc("/mytoys/name", paulHandler)
-	log.Println("running at http://localhost:8080")
+	log.Println("running at http://localhost:11000")
 	log.Fatal(http.ListenAndServe(":11000", nil))
 }
