@@ -65,7 +65,7 @@ func main() {
 	}
 
 	saved.Name = "initial"
-	http.HandleFunc("/name", paulHandler)
-	log.Println("running at http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	http.HandleFunc("/mytoys/name", paulHandler)
+	log.Println("running at http://localhost:11000")
+	log.Fatal(http.ListenAndServe(":11000", nil))
 }
