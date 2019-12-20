@@ -2,7 +2,7 @@
 
 repodir=""
 
-go build -ldflags="-s -w" -o bin/toys main.go
+go build -ldflags="-s -w" -o $repodir/bin/toys $repodir/main.go
 
 bindir=""
 
