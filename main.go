@@ -7,6 +7,7 @@ import (
 	"toysgolang/rds"
 
 	"github.com/gomodule/redigo/redis"
+	"os"
 )
 
 var saved = &Request{}
@@ -59,6 +60,19 @@ func paulHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	if homeDir, err := os.UserHomeDir(); err != nil {
+                log.Println("AAAAAAAAAA")
+        } else {
+                log.Println("HOMEDIR1: ", homeDir)
+        }
+
+        if homeDir2 := os.Getenv("HOME"); homeDir2 != "" {
+                log.Println("bbbbbbbbbb")
+        } else {
+                log.Println("HOMEDIR2: ", homeDir2)
+        }
+
+
 	rc = rds.NewPool()
 	if rc == nil {
 		log.Fatalln("redis conn is nil!")
